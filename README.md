@@ -1,2 +1,2 @@
 # finch
-a tool you can share your files useing http
+a tool helps you share your files useing http
