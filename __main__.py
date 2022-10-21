@@ -1,24 +1,9 @@
-#!/usr/bin/env python3
-from posixpath import dirname
-import sys
 import os
+import sys
+from posixpath import dirname
+from pathlib import Path
 
+_here_path = ''
+if len(sys.argv) == 2 :_here_path = sys.argv[1]
 
-i = 0
-def exec ():
-    if len(sys.argv) == 2 :
-        path = sys.argv[1]
-    else:
-        path = dirname(__file__)
-    os.environ.setdefault('FINCH_HERE',path)
-
-    from .manage import main
-    argv = [
-        __file__,
-        'runserver',
-        '0.0.0.0:8000'
-    ]
-    main(argv)
-
-if __name__ == "__main__" :
-    exec()
+os.system(f"{Path(dirname(__file__))/'finch'}  {_here_path}")
