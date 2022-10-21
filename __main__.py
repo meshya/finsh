@@ -14,7 +14,7 @@ def exec ():
 
     from .manage import main
     argv = [
-        sys.argv[0],
+        __file__,
         'runserver',
         '0.0.0.0:8000'
     ]
