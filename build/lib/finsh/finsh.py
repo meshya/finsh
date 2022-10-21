@@ -5,10 +5,9 @@ import os
 
 i = 0
 def exec ():
-    if len(sys.argv) == 2 :
-        path = sys.argv[1]
-    else:
-        path = dirname(__file__)
+    
+    path = sys.argv[1]
+
     os.environ.setdefault('FINCH_HERE',path)
     
     try:
@@ -16,11 +15,16 @@ def exec ():
     except:
         from manage import main
 
-    argv = [
+    _listen = '0.0.0.0:8000'
+
+    if '--listen' in sys.argv :
+        _listen = sys.argv[sys.argv.index('--listen') + 1]
+
+    argv = (
         __file__,
         'runserver',
-        '0.0.0.0:8000'
-    ]
+        _listen
+    )
     main(argv)
 
 if __name__ == "__main__" :

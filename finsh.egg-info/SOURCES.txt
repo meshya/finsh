@@ -12,6 +12,7 @@ finsh.egg-info/requires.txt
 finsh.egg-info/top_level.txt
 finsh/sad/__init__.py
 finsh/sad/asgi.py
+finsh/sad/conf.py
 finsh/sad/settings.py
 finsh/sad/urls.py
 finsh/sad/wsgi.py

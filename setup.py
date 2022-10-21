@@ -3,14 +3,14 @@ from setuptools import setup
 
 setup(
     name='finsh',
-    version='0.0.1',    
+    version='0.1.0',    
     description='Share files using django',
     url='https://github.com/mohali4/finsh',
     author='mohali hamilton',
     author_email='mahmohamad560@gmail.com',
     license='MIT',
     packages=['finsh','finsh.sad','finsh.shareing'],
-    install_requires=['django'],
+    install_requires=['django','termcolor'],
                     
 
     #classifiers=[

@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
+from django.urls import re_path
 from shareing.views import upload_from_share_dir as upload_share
 urlpatterns = [
-    path('share/<fpath>/',upload_share)
+    re_path('share/(.*)',upload_share), #type: ignore
+    re_path('(.*)',upload_share) #type: ignore
+
 ]
