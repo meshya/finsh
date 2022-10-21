@@ -124,8 +124,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+import os
+from posixpath import dirname
 
 SHARED_DIRS = [
         BASE_DIR/"share",
-        "/storage/emulated/0/share/",
+        os.environ.get('FINCH_HERE',dirname(__file__))
         ]

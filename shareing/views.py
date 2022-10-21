@@ -23,6 +23,5 @@ def upload_from_share_dir (request, fpath):
         response['Content-Length'] = file_size
         
         return response
-    except e as Exception:
-        print (e)
+    except :
         return Http404()
