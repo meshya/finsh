@@ -12,7 +12,7 @@ def exec ():
         path = dirname(__file__)
     os.environ.setdefault('FINCH_HERE',path)
 
-    from manage import main
+    from .manage import main
     argv = [
         sys.argv[0],
         'runserver',
