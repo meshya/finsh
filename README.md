@@ -7,4 +7,4 @@ Do you want to share you files from your computer using HTTP (based on python) e
 4) `wget http://yourip:8000/share/yourfilename`
 
 ### tips
-1) Select hostname: `python -m finch /path/to/dir --listen YourHostName:Port`
+1) Select hostname: `python -m finsh /path/to/dir --listen YourHostName:Port`
