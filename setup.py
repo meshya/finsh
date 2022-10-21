@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='finsh',
-    version='0.1.0',    
+    version='0.1.2',    
     description='Share files using django',
     url='https://github.com/mohali4/finsh',
     author='mohali hamilton',

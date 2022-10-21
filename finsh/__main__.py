@@ -12,8 +12,8 @@ except:
     from sad.conf import c
 
 
-_here_path_argv = dirname(__file__)
-if len(sys.argv) == 2 :_here_path_argv = sys.argv[1]
+_here_path_argv = Path(os.getcwd())
+if len(sys.argv) == 2 :_here_path_argv = Path(os.path.abspath(sys.argv[1]))
 _listen = '0.0.0.0:8000'
 for argv in sys.argv[1:]:
     if re.match(r'^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}(:\d{1-6})?$',argv):
@@ -43,14 +43,14 @@ def list_dir(main_path,path=None,prefix="|"):
             print(folder_info)
             list_dir(main_path,path=file_path,prefix=prefix+'  |')
 print()
-print(c.yellow(_here_path_argv+':'))
+print(c.yellow(str(_here_path_argv)+':'))
 print("_____________________________")
 list_dir(Path(_here_path_argv))
 print()
 w = 0
 print(f'Running server {c.blue("."*w)}   ',end='\r')
 try:
-    process = subprocess.Popen([f"env python {Path(dirname(__file__))/'finsh.py'}  {_here_path_argv} --listen {_listen}"] ,shell=True, universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    process = subprocess.Popen([f"env python {Path(dirname(__file__))/'finsh.py'}  {str(_here_path_argv)} --listen {_listen}"] ,shell=True, universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
     def shell_iterator ():
         while True :
