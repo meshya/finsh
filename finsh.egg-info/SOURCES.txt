@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+finsh/__init__.py
+finsh/__main__.py
+finsh/manage.py
+finsh.egg-info/PKG-INFO
+finsh.egg-info/SOURCES.txt
+finsh.egg-info/dependency_links.txt
+finsh.egg-info/requires.txt
+finsh.egg-info/top_level.txt
