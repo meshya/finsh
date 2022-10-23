@@ -1,5 +1,12 @@
+from django.conf import settings
 def log(string):
-    print(f'__finshlognow__:::{string}')
+    
+    with open(settings.BASE_DIR/'log.txt','ab+') as f:
+        f.write(string.encode('UTF-8'))
+        f.write('\n'.encode('UTF-8'))
+        f.close()
+    
+    #print(f'__finshlognow__:::{string}')
 
 import termcolor
 class c :

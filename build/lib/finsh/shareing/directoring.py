@@ -9,7 +9,7 @@ def get_shared_dirs ():
 def find_shared_file (fname):
     import os
     from pathlib import Path
-    shared_dirs = get_shared_dirs()
+    shared_dirs = [str(_d) for _d in get_shared_dirs()]
     for shdir in shared_dirs:
         file_candidate = Path(shdir).resolve()/fname
         if os.path.exists(file_candidate):

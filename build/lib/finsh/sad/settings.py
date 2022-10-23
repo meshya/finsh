@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t(ou$63g6n4**3ad8rtqe)5(rpcvk)x%bv_rw+qeowmu!^!)#n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -129,5 +129,5 @@ from posixpath import dirname
 
 SHARED_DIRS = [
         BASE_DIR/"share",
-        os.environ.get('FINCH_HERE',dirname(__file__))
+        os.environ.get('FINSH_HERE',dirname(__file__))
         ]

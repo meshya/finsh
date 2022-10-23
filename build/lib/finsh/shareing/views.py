@@ -21,7 +21,7 @@ def upload_from_share_dir (request, fpath):
     file_dir = find_shared_file(fpath)
     file_size = pathing.getsize(file_dir)
     default_content_type = 'application/forcedownload'
-    log(f'FILE:{c.green(fpath)}:] SIZE:{c.red(calc_size(file_size))}:{"}"}')
+    log(f'FILE:{fpath}:] SIZE:{calc_size(file_size)}:{"}"}')
 
     if not pathing.exists(file_dir):
         return Http404()

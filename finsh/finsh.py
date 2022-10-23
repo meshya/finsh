@@ -3,13 +3,18 @@ from posixpath import dirname
 import sys
 import os
 
+import time
+
+
 i = 0
 def exec ():
     
     path = sys.argv[1]
 
-    os.environ.setdefault('FINCH_HERE',path)
-    
+    os.environ.setdefault('FINSH_HERE',path)
+
+
+    #time.sleep(10)
     try:
         from .manage import main
     except:
