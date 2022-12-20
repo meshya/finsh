@@ -64,13 +64,13 @@ try:
     print(f'Running server {c.blue("."*w)}   ',end='\r')
 
     process = subprocess.Popen([
-    "env" ,"python" ,
+    sys.executable,
     str(Path(dirname(__file__))/'finsh.py'), 
     str(_here_path_argv),
     "--listen",
     _listen ,
-#    ">",
-#    str(Path(dirname(__file__))/'log.txt')
+    ">",
+    str(Path(dirname(__file__))/'log.txt')
     ] 
     ,shell=False, 
     universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
